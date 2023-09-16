@@ -1,7 +1,7 @@
 ---
 title: OMH Benefits 
 layout: page
-description: OMH Benefits
+description: Our goal is to empower participants in the mobile ecosystem, including app developers, SDK and API service providers, mobile hardware OEMs, and users. We aim to create an open and secure mobile ecosystem by offering a range of software tools and services that ensure high-quality mobile experiences for everyone involved.
 bodyClass: page-about
 image1: /images/main/OMH_Research.png
 image2: /images/main/OMH_Overview.png
@@ -12,12 +12,6 @@ image6: /images/main/storage_icon.jpg
 image7: /images/main/login_icon.png
 image8: /images/main/OMH_broken_ux.png
 ---
-
-Our goal is to empower participants in the mobile ecosystem, including app developers, SDK and API service providers, mobile hardware OEMs, and users. We aim to create an open and secure mobile ecosystem by offering a range of software tools and services that ensure high-quality mobile experiences for everyone involved.
-
-<!-- Set the image size to 50% using HTML 
-<img src="/images/main/omh_logo.png" alt="About" style="width:70%;">
--->
 
 # Current Experience in the Android Mobile Ecosystems
 
