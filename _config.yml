@@ -1,1 +1,53 @@
-theme: jekyll-theme-midnight
+baseurl: '/'
+permalink: pretty
+title: 'Open Mobile Hub'
+
+logo:
+  mobile: "/images/logo/omh_logo.png"
+  mobile_height: "60px"
+  mobile_width: "60px"
+  desktop: "/images/logo/omh_logo.png"
+  desktop_height: "60px"
+  desktop_width: "60px"
+
+home: 
+  limit_libraries: 6
+  limit_blogs: 6
+
+collections:
+  libraries:
+    output: true
+    sort_by: weight
+  blogs:
+    output: true
+    sort_by: weight
+
+defaults:
+  - scope:
+      path: ""
+      type: "libraries"
+    values:
+      layout: "library"
+  - scope:
+      path: ""
+      type: "blogs"
+    values:
+      layout: "blog"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md

@@ -1,0 +1,60 @@
+---
+layout: default
+bodyClass: "page-home"
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>{{ page.title }}</title>
+  <!-- Other meta tags, stylesheets, and scripts may also be present here -->
+</head>
+<body class="{{ page.bodyClass }}">
+
+<div class="intro bg2">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-8 col-lg-8 order-1 order-md-1">
+        <video width="100%" height="auto" muted loop autoplay controls preload="auto">
+          <source src="/videos/omh_intro.mp4" type="video/mp4">
+        </video>
+	<p></p>
+        {{ content }}
+      </div>
+      {% if page.intro_image %}
+        <div class="col-12 col-md-4 col-lg-4 order-2 order-md-2 position-relative">
+          <a href="https://conference2023.gosim.org/" target="_blank">
+            <img alt="{{ page.title }}" src="{{ page.intro_image | relURL }}"  style="width: 110%;"/>
+            <!-- The following code was removed from the line above as the image wasn't clickable. Add back if needed-->
+            <!-- class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %} intro-image-home"-->
+          </a>
+        </div>
+        <!--To restore the original image, rename the file omh_intro_old.png to omh_intro.png, and remore the reference to the gosim conference, and the width 85% and margin_left additions-->
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if site.data.features %}
+<div class="strip strip-light-blue">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+
+      {% for feature in site.data.features %}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        <div class="feature">
+          {% if feature.image %}
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
+          {% endif %}
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <div class="feature-content">{{ feature.description }}</div>
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,47 @@
+.libraries {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
+  @include media-breakpoint-up(md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  h1 {
+    color: $white;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.2;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      font-size: 48px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 50px;
+    }
+  }
+  h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: $black;
+    font-family: $font-family-base;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: light;
+    line-height: 1.5;
+    color: $white;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }
+}
+
+.libraries-small {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

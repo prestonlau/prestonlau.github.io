@@ -1,0 +1,38 @@
+.contact {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  .contact-image {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  h1 {
+    color: $primary-dark;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: light;
+    line-height: 1.5;
+    color: $primary-dark;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }
+
+  .contact-title {
+  }
+  .contact-content {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}

@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+---
+title: Open Mobile Hub - Unified Android App Development
+layout: home
+intro_image: "images/illustrations/omh_intro.png"
+intro_image_absolute: true
+intro_image_hide_on_mobile: true
+show_call_box: True
+description: Welcome to Open Mobile Hub (OMH)
+image1: /images/main/OMH_Research.png
+image2: /images/main/OMH_Overview.png
+image3: /images/main/OMH_Architecture.png
+image4: /images/main/OMH_Benefits.png
+image5: /images/main/maps_icon.png
+image6: /images/main/storage_icon.jpg
+image7: /images/main/login_icon.png
+---
 
-You can use the [editor on GitHub](https://github.com/prestonlau/prestonlau.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/prestonlau/prestonlau.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Introducing the Open Mobile Hub (OMH) – an inclusive, open-source SDK libraries for devices with and without Google Mobile Services (GMS). Simplify integrating services like Authentication, Maps & Location, and Cloud Storage with standardized interfaces. Seamlessly switch API providers, empowering flexible app development across diverse environments. Join us in embracing inclusivity and innovation with OMH, your pathway to elevated Android app development.
