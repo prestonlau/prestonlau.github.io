@@ -18,12 +18,16 @@
   .copyright {
     margin-top: 10px;
     font-size: 18px;
+    margin-left: auto;
+    right: 0;
     a {
       font-weight: bold;
       color: inherit;
     }
   }
   .social {
+    display: flex;
+    width: 100%;
     a:first-of-type {
       margin-left: -10px;
     }
