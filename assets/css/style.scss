@@ -58,6 +58,7 @@ $sub-footer-text-color: $white;
 @import "components/intro-image";
 @import "components/strip";
 @import "components/feature";
+@import "components/benefits";
 @import "components/libraries";
 @import "components/library";
 @import "components/contact";
@@ -66,7 +67,6 @@ $sub-footer-text-color: $white;
 
 // Pages
 @import "pages/page-home";
-@import "pages/page-teams";
 @import "pages/page-service";
 
 body {
@@ -74,7 +74,7 @@ body {
   line-height: 1.2;
   font-family: $font-family-base;
   @include media-breakpoint-up(md) {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.3;
   }
 }
