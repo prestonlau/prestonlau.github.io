@@ -1,7 +1,7 @@
 ---
-title: Get Involved
+title: Get Involved in OMH
 layout: contact
-description: Get Involved form.
+description: Get in the Action! Fill out the form below for more OMH information and prompt contact
 ---
 
 Get in the Action! Fill out the form below for more OMH information and prompt contact:

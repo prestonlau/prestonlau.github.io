@@ -34,7 +34,7 @@
   },
   {
     "title": "Core Gradle Plugin",
-    "description": "The OMH Core is an essential Gradle plugin designed to streamline the configuration, enabling, and setup of OMH Client Libraries within developers’ projects. With this plugin, developers can effortlessly incorporate the necessary dependencies and activate custom-build variants, facilitating the compilation of various builds that leverage the defined providers.<br/><br/> By automating these processes, the OMH Core plugin simplifies the integration of OMH functionalities into your projects.",
+    "description": "The OMH Core is an essential Gradle plugin designed to streamline the configuration, enabling, and setup of OMH Client Libraries within developers’ projects. With this plugin, developers can effortlessly incorporate the necessary dependencies and activate custom-build variants, facilitating the compilation of various builds that leverage the defined providers.",
     "url": "/libraries/core_plugin/",
     "image": {
       "url": "images/libraries/core.png",
