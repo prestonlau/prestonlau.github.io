@@ -1,5 +1,6 @@
 ---
-title: "Maps & Location"
+title: Maps & Location SDK
+description: OMH Maps is an Android client library that makes it easy to integrate maps on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.
 date: 2018-11-18T12:33:46+10:00
 weight: 20
 github_url: https://www.github.com/openmobilehub/omh-maps
@@ -20,9 +21,11 @@ github_url: https://www.github.com/openmobilehub/omh-maps
   }
 </style>
 
-OMH Maps is an Android client library that makes it easy to integrate maps on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.
+<h1>A single codebase, running seamlessly on any device</h1>
 
-With the OMH Maps Client Library, you can easily add Google Maps, OpenStreetMap, and other third-party maps to your applications, regardless of whether the device has GMS or not. The library takes care of the technical details, providing a unified interface and components for a consistent map experience.
+OMH Maps Client Library is an Android SDK that simplifies the integration of maps on both Google Mobile Services (GMS) and non-GMS devices. It provides a unified interface and components for a consistent map experience, eliminating the need for separate codebases for different Android builds. This repository contains a detailed Getting Started guide to help developers learn and effectively implement the OMH Maps Client Library into their Android projects. 
+
+For instance, the following screenshots showcase multiple devices with Android, both with GMS and Non-GMS. The same app works without changing a single line of code, supporting multiple map provider implementations (Google Maps and OpenStreetMap).
 
 <div class="container pt-6 pb-6">
   <div class="row">
@@ -44,7 +47,7 @@ With the OMH Maps Client Library, you can easily add Google Maps, OpenStreetMap,
       </div>
   </div>
   <div>
-    <a href="https://github.com/openmobilehub/omh-auth">
+    <a href="https://github.com/openmobilehub/omh-maps">
     <img src="/images/main/github-mark/github-mark.png" alt="OMH" class="small-image" align="center">
   </a>
   <p align="center">Fork our samples and try them yourself.</p>

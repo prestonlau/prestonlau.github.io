@@ -1,7 +1,4 @@
 .intro {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
   overflow: hidden;
@@ -47,7 +44,7 @@
 }
 
 .frontpageads {
-  background: $white;
+  background: rgba(255, 255, 255, 0.7);
   padding: 15px;
   text-align: center;
   h1  {
