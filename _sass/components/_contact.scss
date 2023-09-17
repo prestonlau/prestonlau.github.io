@@ -17,13 +17,13 @@
     height: auto;
   }
   h1 {
-    color: $primary-dark;
+    color: $primary;
   }
   p {
     font-size: 1.2rem;
     font-weight: light;
     line-height: 1.5;
-    color: $primary-dark;
+    color: $primary;
     @include media-breakpoint-up(md) {
       width: 100%;
     }
