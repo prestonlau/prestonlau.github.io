@@ -3,13 +3,9 @@ title: OMH Benefits
 layout: benefits
 description: Our goal is to empower participants in the mobile ecosystem, including app developers, SDK and API service providers, mobile hardware OEMs, and users. We aim to create an open and secure mobile ecosystem by offering a range of software tools and services that ensure high-quality mobile experiences for everyone involved.
 bodyClass: page-about
-image1: /images/main/OMH_Research.png
 image2: /images/main/OMH_Overview.png
 image3: /images/main/OMH_Architecture.png
 image4: /images/main/OMH_Benefits.png
-image5: /images/main/maps_icon.png
-image6: /images/main/storage_icon.jpg
-image7: /images/main/login_icon.png
 image8: /images/main/OMH_broken_ux.png
 ---
 
@@ -22,12 +18,6 @@ An Open Mobile Ecosystem seeks to offer a seamless experience where different mo
 The Open Mobile Hub (OMH) client SDK is an open-source framework designed to address these limitations.
 
 ![]({{page.image8 | relative_url}})
-
-<!--# Research Papers from Top Universities support an Open Mobile System in Anticompetitive Practices
-
-![]({{page.image1 | relative_url}})
--->
-
 
 # OMH Architecture
 
