@@ -44,7 +44,7 @@ bodyClass: "page-libraries"
       {% for library in site.data.libraries %}
       {% if library.title != page.title %}
       <div class="col-12 col-md-6 col-lg-6 mb-2">
-        <div class="library">
+        <div class="library reveal fade-bottom">
           {% if library.image %}
           <div class="library-image"><a href="{{ library.url }}"><img alt="{{ library.title }} logo" src="{{ library.image.url | relative_url }}" width="{{ library.image.width }}" height="{{ library.image.height }}" /></a></div>
           {% endif %}

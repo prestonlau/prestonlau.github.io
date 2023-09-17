@@ -1,6 +1,6 @@
 [
   {
-    "title": "Login & Authentication",
+    "title": "Login & Authentication SDK",
     "description": "OMH Auth is an Android client library that makes it easy to integrate auth providers on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.",
     "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-auth/tree/main/auth-api-gms\">Auth GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-auth/tree/main/auth-api-non-gms\">Auth Non-GMS Plugin</a></li></ul>",
     "url": "/libraries/loginauth/",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "title": "Maps & Location",
+    "title": "Maps & Location SDK",
     "description": "OMH Maps is an Android client library that makes it easy to integrate maps on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.",
     "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-maps/tree/main/maps-api-googlemaps\">Google Maps GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-maps/tree/main/maps-api-openstreetmap\">OpenStreetMap Non-GMS Plugin</a></li></ul>",
     "url": "/libraries/maps/",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "title": "Storage",
+    "title": "Storage SDK",
     "description": "The OMH Storage Client Library would allow users to support file management and app backup services in a seamless way, regardless of the presence of GMS services or not.",
     "url": "/libraries/storage/",
     "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-storage/tree/main/storage-api-drive-gms\">Google Drive GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-storage/tree/main/storage-api-drive-nongms\">Google Drive Non-GMS Plugin</a></li></ul>",
