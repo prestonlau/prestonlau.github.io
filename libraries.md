@@ -2,7 +2,7 @@
 title: client-libraries
 layout: libraries
 description: SDK & Plugins
-intro_image: "images/illustrations/sdk.png"
+intro_image: 
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 ---
