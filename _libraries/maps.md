@@ -1,6 +1,6 @@
 ---
 title: Maps & Location SDK
-description: OMH Maps is an Android client library that makes it easy to integrate maps on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.
+description: OMH Maps is a client library that makes it easy to integrate maps on all types of devices, running different OS platforms. It eliminates the need for separate codebases for different app builds.
 date: 2018-11-18T12:33:46+10:00
 weight: 20
 github_url: https://www.github.com/openmobilehub/omh-maps
@@ -23,7 +23,7 @@ github_url: https://www.github.com/openmobilehub/omh-maps
 
 <h1>A single codebase, running seamlessly on any device</h1>
 
-OMH Maps Client Library is an Android SDK that simplifies the integration of maps on both Google Mobile Services (GMS) and non-GMS devices. It provides a unified interface and components for a consistent map experience, eliminating the need for separate codebases for different Android builds. This repository contains a detailed Getting Started guide to help developers learn and effectively implement the OMH Maps Client Library into their Android projects. 
+OMH Maps Client Library is a client SDK that simplifies the integration of maps on all types of devices running different OS platforms. It provides a unified interface and components for a consistent map experience, eliminating the need for separate codebases for different app builds. This GitHub repository contains a detailed Getting Started guide to help developers learn and effectively implement the OMH Maps Client Library into their projects. 
 
 For instance, the following screenshots showcase multiple devices with Android, both with GMS and Non-GMS. The same app works without changing a single line of code, supporting multiple map provider implementations (Google Maps and OpenStreetMap).
 

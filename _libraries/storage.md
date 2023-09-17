@@ -1,6 +1,6 @@
 ---
 title: Storage SDK
-description: The OMH Storage Client Library would allow users to support file management and app backup services in a seamless way, regardless of the presence of GMS services or not.  The file management feature supports file upload, retrieval, update, and deletion of files and folders. The OMH API enables Apps running on GMS and non-GMS devices to backup data with storage and backup providers like Google Drive.
+description: The OMH Storage Client Library would allow users to support file management and app backup services in a seamless way, regardless of the types of devices or the OS platforms. The file management feature supports file upload, retrieval, update, and deletion of files and folders. The OMH SDK enables Apps running on all types of devices to backup data with storage and backup providers like Google Drive.
 date: 2019-05-18T12:33:46+10:00
 weight: 30
 github_url: https://www.github.com/openmobilehub/omh-storage
@@ -23,11 +23,11 @@ github_url: https://www.github.com/openmobilehub/omh-storage
 
 <h1>A single codebase, running seamlessly on any device</h1>
 
-OMH Storage is an Android client library that makes it easy to integrate storage on both Google Mobile Services (GMS) and non-GMS devices. It eliminates the need for separate codebases for different Android builds.
+OMH Storage is a client library that makes it easy to integrate storage on all types of devices, running differnet OS platforms. It eliminates the need for separate codebases for different app builds.
 
-With the OMH Storage Client Library, you can easily add Google Drive and other third-party storage to your applications, regardless of whether the device has GMS or not. The library takes care of the technical details, providing a unified interface and components for a consistent storage experience.
+With the OMH Storage Client Library, you can easily add Google Drive and other third-party storage to your applications, regardless of its device types or its OS platforms. The library takes care of the technical details, providing a unified interface and components for a consistent storage experience.
 
-For instance, the following screenshots showcase multiple devices with Android, both with GMS and Non-GMS. The same app works without changing a single line of code, supporting multiple storage provider implementations.OMH Maps Client Library is an Android SDK that simplifies the integration of maps on both Google Mobile Services (GMS) and non-GMS devices. It provides a unified interface and components for a consistent map experience, eliminating the need for separate codebases for different Android builds. This repository contains a detailed Getting Started guide to help developers learn and effectively implement the OMH Maps Client Library into their Android projects.
+For instance, the following screenshots showcase multiple devices with Android, both with GMS and Non-GMS. The same app works without changing a single line of code, supporting multiple storage provider implementations. 
 
 <div class="container pt-6 pb-6">
   <div class="row">
