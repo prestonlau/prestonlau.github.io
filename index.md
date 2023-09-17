@@ -1,5 +1,5 @@
 ---
-title: Open Mobile Hub - Unified Android App Development
+title: Open Mobile Hub - Unified App Development
 layout: home
 intro_image: 
 intro_image_absolute: true
