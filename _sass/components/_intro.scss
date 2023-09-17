@@ -45,3 +45,24 @@
   padding-top: 100px;
   padding-bottom: 30px;
 }
+
+.frontpageads {
+  background: $white;
+  padding: 15px;
+  text-align: center;
+  h1  {
+    color: $black;
+    font-size: 22px;
+    text-align: center;
+  }
+  h2  {
+    color: $black;
+    font-size: 20px;
+    text-align: center;
+  }
+  p  {
+    color: $black;
+    font-size: 15px;
+    text-align: center;
+  }
+}
