@@ -54,3 +54,16 @@ For instance, the following screenshots showcase multiple devices with Android, 
   </div>
 </div>
 
+# Sample App
+This repository includes a [maps-sample](/maps-sample) that demonstrates the functionality of the OMH Maps Client Library. By cloning the repo and executing the app, you can explore the various features offered by the library. However, if you prefer a step-by-step approach to learn the SDK from scratch, we recommend following the detailed Getting Started guide provided in this repository. The guide will walk you through the implementation process and help you integrate the OMH Maps Client Library into your projects effectively.
+
+# Documentation
+* Find complete documentation on the [Wiki](https://github.com/openmobilehub/omh-maps/wiki).
+* Check out the [API Reference Docs](https://openmobilehub.github.io/omh-maps).
+
+# Provider Implementations / Plugins
+OMH Maps SDK is open-source, promoting community collaboration and plugin support from other map providers to enhance capabilities and expand supported map services. More details can be found at https://github.com/openmobilehub/omh-maps/wiki.
+
+# Contributing
+Please contribute! We will gladly review any pull requests. Make sure to read the [Contributing](https://github.com/openmobilehub/omh-maps/blob/release/1.0/CONTRIBUTING.md) page first though.
+

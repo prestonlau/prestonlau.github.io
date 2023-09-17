@@ -56,3 +56,25 @@ For instance, the following screenshots showcase multiple devices with Android, 
   </div>
 </div>
 
+# Sample App: All-Feature Demonstration
+This repository also contains a [Storage-sample](/storage-sample), which demonstrates all the functionalities of the OMH Storage Client Library. To get started, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Set up your Google Cloud project. You can refer to the [instructions](#set-up-your-google-cloud-project-for-applications-with-google-services-google-auth) for guidance.
+3. Add the client id to your app using the instructions provided [here](https://github.com/openmobilehub/omh-storage#set-up-your-google-cloud-project-for-applications-with-google-services-google-auth).
+4. Set the variant to `debugSingleBuild`
+5. Run the `storage-sample` on your device
+
+However, if you prefer a more structured approach to learn the client library from scratch, it's recommended to begin with the [Getting Started section](#getting-started).
+
+# Documentation
+See example and check the full documentation and add custom implementation at our [Wiki](https://github.com/openmobilehub/omh-storage/wiki).
+
+Additionally for more information about the OMH Storage functions, [Docs](https://openmobilehub.github.io/omh-storage).
+
+# Provider Implementations / Plugins
+OMH Storage SDK is open-source, promoting community collaboration and plugin support from other storage providers to enhance capabilities and expand supported storage services. More details can be found at [the wiki](https://github.com/openmobilehub/omh-storage/wiki/Creating-a-custom-implementation).
+
+# Contributing
+Please contribute! We will gladly review any pull requests. Make sure to read the [CONTRIBUTING](https://github.com/openmobilehub/omh-storage/blob/main/CONTRIBUTING.md) page first though.
+

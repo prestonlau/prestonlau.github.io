@@ -56,3 +56,33 @@ For instance, the following screenshots showcase multiple devices with Android, 
   </div>
 </div>
 
+# Sample App
+
+This repository includes a [auth-sample](/auth-sample) that demonstrates the functionality of the
+OMH Auth Client Library. By cloning the repo and executing the app, you can explore the various
+features offered by the library. However, if you prefer a step-by-step approach to learn the SDK
+from scratch, we recommend following the detailed Getting Started guide provided in this repository.
+The guide will walk you through the implementation process and help you integrate the OMH Auth
+Client Library into your projects effectively.
+
+**Note: Before running the sample application, make sure to follow the steps in Setup your Google
+Cloud project for application with Google Services to configure your Google Cloud project.**
+
+# Documentation
+
+See example and check the full documentation and add custom implementation at
+our [Wiki](https://github.com/openmobilehub/omh-auth/wiki).
+
+Additionally for more information about the OMH Auth
+functions, [Docs](https://openmobilehub.github.io/omh-auth).
+
+# Provider Implementations / Plugins
+
+OMH Auth SDK is open-source, promoting community collaboration and plugin support from other auth providers to enhance capabilities and expand supported auth services. More details can be found at [the wiki](https://github.com/openmobilehub/omh-auth/wiki/Creating-a-custom-implementation).
+
+# Contributing
+
+Please contribute! We will gladly review any pull requests. Make sure to read
+the [CONTRIBUTING](https://github.com/openmobilehub/omh-auth/blob/main/CONTRIBUTING.md) page first
+though.
+
