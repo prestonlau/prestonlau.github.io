@@ -115,7 +115,17 @@
     <div class="row justify-content-start">
       <div class="col-12 col-md-12 col-lg-12 order-1 order-md-1">
       <div class="library library-single">
-        <style>
+        <ul>
+<li><a href="#singlecodebase">A single codebase</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#sample-app">Sample App</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<p><br />
+<br /></p>
+<style>
   .container img.standard-image {
     /* Styles for the standard-size image */
     width: 60%; /* Set the desired width here */
@@ -130,7 +140,7 @@
   }
 </style>
 
-<h1>A single codebase, running seamlessly on any device</h1>
+<h1 id="singlecodebase">A single codebase, running seamlessly on any device</h1>
 
 <p>The OMH Auth Client Library simplifies authentication integration for app developers across devices, supporting differnet OS platforms. With a unified interface, it enables easy incorporation of Google Sign-in and other third-party authentication providers without maintaining separate codebases.</p>
 
@@ -165,6 +175,309 @@
   </div>
 </div>
 
+<h1 id="getting-started">Getting started</h1>
+
+<p>This section describes how to setup an Android Studio project to use the OMH Auth SDK for Android.
+For greater ease, a base code will be used within the repository.</p>
+
+<p><strong>Note: To quickly run a full-featured app with all OMH Auth functionality, refer to
+the <a href="#sample-app"><code class="language-plaintext highlighter-rouge">Sample App</code></a> section and follow the provided steps.</strong></p>
+
+<h2 id="set-up-the-development-environment">Set up the development environment</h2>
+
+<ol>
+  <li>Android Studio is required. If you haven’t already done
+so, <a href="https://developer.android.com/studio/index.html">download</a>
+and <a href="https://developer.android.com/studio/install.html?pkg=studio">install</a> it.</li>
+  <li>Ensure that you are using
+the <a href="https://developer.android.com/studio/releases/gradle-plugin">Android Gradle plugin</a> version
+7.0 or later in Android Studio.</li>
+</ol>
+
+<h2 id="clone-the-repository">Clone the repository</h2>
+
+<p>Go to the branch “starter-code”. The easiest way is cloning the repository.</p>
+
+<ul>
+  <li>Open Terminal.</li>
+  <li>
+    <p>Type git clone, and then paste the URL:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone --branch code-starter https://github.com/openmobilehub/omh-auth.git
+</code></pre></div>    </div>
+  </li>
+  <li>Press “Enter” to create your local clone.</li>
+</ul>
+
+<p>You can always check what the final result should be in the module <code class="language-plaintext highlighter-rouge">sample-app</code> in the main or
+develop branches.</p>
+
+<h2 id="set-up-your-google-cloud-project-for-applications-with-google-services-google-auth">Set up your Google Cloud project for applications with Google Services (Google Auth)</h2>
+
+<p>To access Google APIs, generate a unique client_id for your app in the Google API Console. Add the client_id to your app’s code and complete the required Cloud Console setup steps:</p>
+
+<h3 id="steps">Steps</h3>
+
+<ol>
+  <li><a href="https://console.cloud.google.com/projectselector2/home/dashboard?utm_source=Docs_ProjectSelector&amp;_gl=1*1ylhfe0*_ga*MTUwMDIzODY1Ni4xNjc1OTYyMDgw*_ga_NRWSTWS78N*MTY4MjA4ODIyNS44NS4xLjE2ODIwODgyMzcuMC4wLjA.">Go to the Google Cloud Console and open the project selector page.</a></li>
+  <li>Click on “Create Project” to start creating a new Cloud project.</li>
+  <li><a href="https://console.cloud.google.com/apis/credentials">Go to the Credentials page</a>.</li>
+  <li>On the Credentials page, click on “Create credentials” and choose “OAuth Client ID”.</li>
+  <li>In the “Application Type” option, select “Android”.</li>
+  <li>Set your application package name (Use “com.omh.android.auth.sample” if you are following the
+starter-code)</li>
+  <li>
+    <p>Update the debug/release SHA-1 certificate fingerprint for Android’s Client ID.</p>
+
+    <p>Note: The debug build is automatically signed with the debug keystore. Obtain the certificate fingerprint from it by following the guidelines in the official Google Developers documentation: <a href="https://developers.google.com/android/guides/client-auth#using_keytool_on_the_certificate">“Using keytool on the certificate”</a>.</p>
+  </li>
+  <li>In the <a href="https://console.cloud.google.com/apis/credentials/consent">OAuth consent screen</a> add the
+test users that you will be using for QA and development. Without this step you won’t be able to
+access the application while it’s in testing mode.</li>
+  <li>You’re all set!</li>
+</ol>
+
+<h2 id="add-the-client-id-to-your-app">Add the Client ID to your app</h2>
+
+<p>You should not check your Client ID into your version control system, so it is recommended
+storing it in the <code class="language-plaintext highlighter-rouge">local.properties</code> file, which is located in the root directory of your project.
+For more information about the <code class="language-plaintext highlighter-rouge">local.properties</code> file,
+see <a href="https://developer.android.com/studio/build#properties-files">Gradle properties</a>
+<a href="https://developer.android.com/studio/build#properties-files">files</a>.</p>
+
+<ol>
+  <li>Open the <code class="language-plaintext highlighter-rouge">local.properties</code> in your project level directory, and then add the following code.
+Replace <code class="language-plaintext highlighter-rouge">YOUR_CLIENT_ID</code> with your API key.
+<code class="language-plaintext highlighter-rouge">CLIENT_ID=YOUR_CLIENT_ID</code></li>
+  <li>Save the
+fileand <a href="https://developer.android.com/studio/build#sync-files">sync your project with Gradle</a>.</li>
+</ol>
+
+<h2 id="gradle-configuration">Gradle configuration</h2>
+
+<p>To incorporate OMH Auth into your project, you have two options: utilize the OMH Core Plugin or
+directly include the OMH Client libraries dependencies. This plugin simplifies the addition of
+Gradle dependencies, allowing you to effortlessly manage and include the necessary dependencies for
+seamless integration.</p>
+
+<h3 id="add-omh-core-plugin">Add OMH Core plugin</h3>
+
+<p>The subsequent instructions will outline the necessary steps for including the OMH Core Plugin as a
+Gradle dependency.</p>
+
+<ol>
+  <li>
+    <p>In your “auth-starter-sample” module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> under the <code class="language-plaintext highlighter-rouge">plugins</code> element add the
+plugin id.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins {
+   ...
+   id("com.openmobilehub.android.omh-core")
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Save the file
+and <a href="https://developer.android.com/studio/build#sync-files">sync Project with Gradle Files</a>.</p>
+  </li>
+</ol>
+
+<h3 id="configure-the-omh-core-plugin">Configure the OMH Core plugin</h3>
+
+<p>In your <code class="language-plaintext highlighter-rouge">auth-starter-sample</code> module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> file add the following code at the end of
+the file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   omhConfig {
+      bundle("singleBuild") {
+         auth {
+            gmsService {
+               dependency = "com.openmobilehub.android:auth-api-gms:1.0.1-beta"
+            }
+            nonGmsService {
+               dependency = "com.openmobilehub.android:auth-api-non-gms:1.0.1-beta"
+            }
+         }
+      }
+      bundle("gms") {
+         auth {
+            gmsService {
+               dependency = "com.openmobilehub.android:auth-api-gms:1.0.1-beta"
+            }
+         }
+      }
+      bundle("nongms") {
+         auth {
+            nonGmsService {
+               dependency = "com.openmobilehub.android:auth-api-non-gms:1.0.1-beta"
+            }
+         }
+      }
+   }
+</code></pre></div></div>
+
+<p><em><strong>NOTE: This section covers concepts about the core plugin</strong></em></p>
+
+<p>In your “auth-starter-sample” module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> file is required to configure
+the <code class="language-plaintext highlighter-rouge">omhConfig</code>. The <code class="language-plaintext highlighter-rouge">omhConfig</code> definition is used to extend the existing Android Studio
+variants in the core plugin. For more details <code class="language-plaintext highlighter-rouge">omhConfig</code>
+see <a href="https://github.com/openmobilehub/omh-core/tree/release/1.0">OMH Core</a>.</p>
+
+<h4 id="basic-configuration">Basic configuration</h4>
+
+<p>In this step, you will define the OMH Core Plugin bundles to generate multiple build variants with specific suffixes as their names. For example, if your project has <code class="language-plaintext highlighter-rouge">release</code> and <code class="language-plaintext highlighter-rouge">debug</code> variants with <code class="language-plaintext highlighter-rouge">singleBuild</code>, <code class="language-plaintext highlighter-rouge">gms</code>, and <code class="language-plaintext highlighter-rouge">nonGms</code> OMH bundles, the following build variants will be generated:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">releaseSingleBuild</code>, <code class="language-plaintext highlighter-rouge">releaseGms</code>, and <code class="language-plaintext highlighter-rouge">releaseNonGms</code></li>
+  <li><code class="language-plaintext highlighter-rouge">debugSingleBuild</code>, <code class="language-plaintext highlighter-rouge">debugGms</code>, and <code class="language-plaintext highlighter-rouge">debugNonGms</code></li>
+</ul>
+
+<h5 id="variant-singlebuild">Variant singleBuild</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Define the `Service`. In this example is auth.
+- Define the `ServiceDetails`. In this example are `gmsService` and `nonGmsService`.
+- Define the dependency and the path. In this example
+  are `com.openmobilehub.android:auth-api-gms:1.0.1-beta"`
+  and `com.openmobilehub.android:auth-api-non-gms:1.0.1-beta`.
+</code></pre></div></div>
+
+<p><strong>Note:</strong> It’s important to observe how a single build encompasses both GMS (Google MobileServices)
+and Non-GMS configurations.</p>
+
+<h5 id="variant-gms">Variant gms</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Define the `Service`. In this example is auth.
+- Define the `ServiceDetails` . In this example is `gmsService`.
+- Define the dependency and the path. In this example
+  is `com.openmobilehub.android:auth-api-gms:1.0.1-beta"`.
+</code></pre></div></div>
+
+<p><strong>Note:</strong> gms build covers only GMS (Google Mobile Services).</p>
+
+<h5 id="variant-nongms">Variant nongms</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Define the `Service`. In this example is auth.
+- Define the `ServiceDetails` . In this example is `nonGmsService`.
+- Define the dependency and the path. In this example
+  is `com.openmobilehub.android:auth-api-non-gms:1.0.1-beta`.
+</code></pre></div></div>
+
+<p><strong>Note:</strong> nongms build covers only Non-GMS configurations.</p>
+
+<ol>
+  <li>Save and <a href="https://developer.android.com/studio/build#sync-files">sync Project with Gradle Files</a>.</li>
+  <li>Rebuild the project to ensure the availability of <code class="language-plaintext highlighter-rouge">BuildConfig.AUTH_GMS_PATH</code> and <code class="language-plaintext highlighter-rouge">BuildConfig.AUTH_NON_GMS_PATH</code> variables.</li>
+  <li>Now you can select a build variant. To change the build variant Android Studio uses, do one of
+the following:
+    <ul>
+      <li>Select “Build” &gt; “Select Build Variant…” in the menu.</li>
+      <li>Select “View” &gt; “Tool Windows” &gt; “Build Variants” in the menu.</li>
+      <li>Click the “Build Variants” tab on the tool window bar.</li>
+    </ul>
+  </li>
+  <li>You can select any of the 3 variants for the <code class="language-plaintext highlighter-rouge">:auth-starter-sample</code>:
+    <ul>
+      <li>“singleBuild” variant builds for GMS (Google Mobile Services) and Non-GMS devices without
+changes to the code.(Recommended)</li>
+      <li>“gms” variant builds for devices that has GMS (Google Mobile Services).</li>
+      <li>“nongms” variant builds for devices that doesn’t have GMS (Google Mobile Services).</li>
+    </ul>
+  </li>
+  <li>
+    <p>In the <code class="language-plaintext highlighter-rouge">SingletonModule.kt</code> file in the <code class="language-plaintext highlighter-rouge">:auth-starter-sample</code> module add the following code to
+provide the OMH Auth Client.</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">omhAuthProvider</span> <span class="p">=</span> <span class="nc">OmhAuthProvider</span><span class="p">.</span><span class="nc">Builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">addNonGmsPath</span><span class="p">(</span><span class="nc">BuildConfig</span><span class="p">.</span><span class="nc">AUTH_NON_GMS_PATH</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">addGmsPath</span><span class="p">(</span><span class="nc">BuildConfig</span><span class="p">.</span><span class="nc">AUTH_GMS_PATH</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">build</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">omhAuthProvider</span><span class="p">.</span><span class="nf">provideAuthClient</span><span class="p">(</span>
+    <span class="n">scopes</span> <span class="p">=</span> <span class="nf">listOf</span><span class="p">(</span><span class="s">"openid"</span><span class="p">,</span> <span class="s">"email"</span><span class="p">,</span> <span class="s">"profile"</span><span class="p">),</span>
+    <span class="n">clientId</span> <span class="p">=</span> <span class="nc">BuildConfig</span><span class="p">.</span><span class="nc">CLIENT_ID</span><span class="p">,</span>
+    <span class="n">context</span> <span class="p">=</span> <span class="n">context</span>
+<span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><em>Note</em>: we’d recommend to store the client as a singleton with your preferred dependency injection
+library as this will be your only gateway to the OMH Auth SDK and it doesn’t change in runtime at
+all.</p>
+
+<h2 id="adding-auth-to-your-app">Adding Auth to your app.</h2>
+
+<p>First and foremost, the main interface that you’ll be interacting with is called <code class="language-plaintext highlighter-rouge">OmhAuthClient</code>. In
+contains all your basic authentication functionalities like login, sign out and check for a user
+profile.</p>
+
+<h4 id="check-for-an-existing-user">Check for an existing user</h4>
+
+<p>The snippet below shows how to check if there’s a signed in user already in your application. If no
+one has logged in yet, then it will return a null value. A successful fetch will return an object of
+the class <code class="language-plaintext highlighter-rouge">OmhUserProfile</code>. In the <code class="language-plaintext highlighter-rouge">MainActivity.kt</code>, add the following code to the <code class="language-plaintext highlighter-rouge">selectStartDestination()</code> function:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">omhAuthClient</span><span class="p">.</span><span class="nf">getUser</span><span class="p">()</span> <span class="p">==</span> <span class="k">null</span>
+</code></pre></div></div>
+
+<h4 id="login">Login</h4>
+
+<p>If no user is found, then we should request a login intent which will redirect the user to the
+provider’s auth screen, be it the Google SignIn UI or a custom tab that redirects the user to
+Google’s Auth page. This should be used to start an activity for result. In the <code class="language-plaintext highlighter-rouge">LoginFragment.kt</code>,
+add the following code to the <code class="language-plaintext highlighter-rouge">handleLoginResult(result: ActivityResult)</code>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+     <span class="n">omhAuthClient</span><span class="p">.</span><span class="nf">getAccountFromIntent</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
+     <span class="nf">navigateToLoggedIn</span><span class="p">()</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">exception</span><span class="p">:</span> <span class="nc">OmhAuthException</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nf">handleException</span><span class="p">(</span><span class="n">exception</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">LoginFragment.kt</code>, add the following code to the <code class="language-plaintext highlighter-rouge">startLogin</code> function:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This will trigger the login flow.</span>
+<span class="kd">val</span> <span class="py">loginIntent</span> <span class="p">=</span> <span class="n">omhAuthClient</span><span class="p">.</span><span class="nf">getLoginIntent</span><span class="p">()</span>
+<span class="n">loginLauncher</span><span class="p">.</span><span class="nf">launch</span><span class="p">(</span><span class="n">loginIntent</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>If the returned <code class="language-plaintext highlighter-rouge">result</code> contains the account, then you can continue to the logged in activity of
+your application.</p>
+
+<h4 id="sign-out">Sign out</h4>
+
+<p>To sign-out the SDK provides a straightforward functionality that returns an <code class="language-plaintext highlighter-rouge">OmhTask</code>. This is the
+interface to interact with async functionalities and subscribe to the success or error results. To
+cancel a running OMH task a cancellable token is provided after the <code class="language-plaintext highlighter-rouge">execute()</code> function is called.
+This can be stored in the <code class="language-plaintext highlighter-rouge">CancellableCollector</code> class similar to the <code class="language-plaintext highlighter-rouge">CompositeDisposable</code> in
+RxJava. The sign-out action will removes any and all relevant data to the user from the application
+storage. In the <code class="language-plaintext highlighter-rouge">LoggedInFragment.kt</code>, add the following code to the <code class="language-plaintext highlighter-rouge">logout</code> function:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">cancellable</span> <span class="p">=</span> <span class="n">omhAuthClient</span><span class="p">.</span><span class="nf">signOut</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">addOnSuccess</span> <span class="p">{</span> <span class="nf">navigateToLogin</span><span class="p">()</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nf">addOnFailure</span><span class="p">(</span><span class="o">::</span><span class="n">showErrorDialog</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+<span class="n">cancellableCollector</span><span class="p">.</span><span class="nf">addCancellable</span><span class="p">(</span><span class="n">cancellable</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><em>Note:</em> you can cancel all emitted cancellables within the collector running</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cancellableCollector</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h4 id="revoke-token">Revoke token</h4>
+
+<p>The SDK also provides a way to revoke the access token provided to the application. This works
+similar to the sign-out functionality but on top of clearing all local data, this also makes a
+request to the auth provider to revoke the token from the server. In the <code class="language-plaintext highlighter-rouge">LoggedInFragment.kt</code>,
+add the following code to the <code class="language-plaintext highlighter-rouge">revokeToken</code> function:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">cancellable</span> <span class="p">=</span> <span class="n">omhAuthClient</span><span class="p">.</span><span class="nf">revokeToken</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">addOnFailure</span><span class="p">(</span><span class="o">::</span><span class="n">showErrorDialog</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">addOnSuccess</span> <span class="p">{</span> <span class="nf">navigateToLogin</span><span class="p">()</span> <span class="p">}</span>
+    <span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
+<span class="n">cancellableCollector</span><span class="p">.</span><span class="nf">addCancellable</span><span class="p">(</span><span class="n">cancellable</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h1 id="sample-app">Sample App</h1>
 
 <p>This repository includes a <a href="/auth-sample">auth-sample</a> that demonstrates the functionality of the
@@ -195,6 +508,22 @@ functions, <a href="https://openmobilehub.github.io/omh-auth">Docs</a>.</p>
 the <a href="https://github.com/openmobilehub/omh-auth/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> page first
 though.</p>
 
+<h1 id="license">License</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2023 Open Mobile Hub
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre></div></div>
 
       </div>
       </div>

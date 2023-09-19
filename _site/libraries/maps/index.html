@@ -115,7 +115,17 @@
     <div class="row justify-content-start">
       <div class="col-12 col-md-12 col-lg-12 order-1 order-md-1">
       <div class="library library-single">
-        <style>
+        <ul>
+<li><a href="#singlecodebase">A single codebase</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#sample-app">Sample App</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<p><br />
+<br /></p>
+<style>
   .container img.standard-image {
     /* Styles for the standard-size image */
     width: 70%; /* Set the desired width here */
@@ -130,7 +140,7 @@
   }
 </style>
 
-<h1>A single codebase, running seamlessly on any device</h1>
+<h1 id="singlecodebase">A single codebase, running seamlessly on any device</h1>
 
 <p>OMH Maps Client Library is a client SDK that simplifies the integration of maps on all types of devices running different OS platforms. It provides a unified interface and components for a consistent map experience, eliminating the need for separate codebases for different app builds. This GitHub repository contains a detailed Getting Started guide to help developers learn and effectively implement the OMH Maps Client Library into their projects.</p>
 
@@ -163,6 +173,385 @@
   </div>
 </div>
 
+<h1 id="getting-started">Getting started</h1>
+<p>This section describes how to setup an Android Studio project to use the OMH Maps SDK for Android. For greater ease, a base code will be used within the repository.</p>
+
+<p><strong>Note: To quickly run a full-featured app with all OMH Maps functionality, refer to the <a href="#sample-app"><code class="language-plaintext highlighter-rouge">Sample App</code></a> section and follow the provided steps.</strong></p>
+
+<h2 id="set-up-the-development-environment">Set up the development environment</h2>
+<ol>
+  <li>Android Studio is required. If you haven’t already done so, <a href="https://developer.android.com/studio/index.html">download</a> and <a href="https://developer.android.com/studio/install.html?pkg=studio">install</a> it.</li>
+  <li>Ensure that you are using the <a href="https://developer.android.com/studio/releases/gradle-plugin">Android Gradle plugin</a> version 7.0 or later in Android Studio.</li>
+</ol>
+
+<h2 id="clone-the-repository">Clone the repository</h2>
+<p>To clone the repository and checkout the <code class="language-plaintext highlighter-rouge">starter-code</code> branch, use the following command in your Terminal:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   git clone --branch starter-code https://github.com/openmobilehub/omh-maps.git
+</code></pre></div></div>
+
+<h2 id="set-up-your-google-cloud-project-for-applications-with-google-servicesgoogle-maps">Set up your Google Cloud project for applications with Google Services(Google Maps)</h2>
+<p>Complete the required Cloud Console setup following the next steps, for more information see <a href="https://developers.google.com/maps/documentation/android-sdk/cloud-setup">Documentation</a></p>
+
+<h3 id="steps">Steps</h3>
+
+<h4 id="set-up-your-project">Set up your project</h4>
+<ol>
+  <li>In the Google Maps Cloud Console, on the project selector page, click <strong>Create Project</strong> to begin creating a new Cloud project, <a href="https://console.cloud.google.com/projectselector2/home/dashboard?utm_source=Docs_ProjectSelector&amp;_gl=1*1ylhfe0*_ga*MTUwMDIzODY1Ni4xNjc1OTYyMDgw*_ga_NRWSTWS78N*MTY4MjA4ODIyNS44NS4xLjE2ODIwODgyMzcuMC4wLjA.">Go to the project selector page</a>.</li>
+  <li>Make sure that billing is enabled for your Cloud project, <a href="https://console.cloud.google.com/project/_/billing?_gl=1*msea12*_ga*MTUwMDIzODY1Ni4xNjc1OTYyMDgw*_ga_NRWSTWS78N*MTY4MjA4ODIyNS44NS4xLjE2ODIwODgyMzcuMC4wLjA.">Confirm that billing is enabled for your project</a>.</li>
+</ol>
+
+<h4 id="enable-apis">Enable APIs</h4>
+<ol>
+  <li>To use Google Maps Platform, you must enable the APIs or SDKs you plan to use with your project, <a href="https://console.cloud.google.com/apis/library/maps-android-backend.googleapis.com?utm_source=Docs_EnableSpecificAPI&amp;_gl=1*t8hu9m*_ga*MTUwMDIzODY1Ni4xNjc1OTYyMDgw*_ga_NRWSTWS78N*MTY4MjA4ODIyNS44NS4xLjE2ODIwODgyMzcuMC4wLjA.">Enable the Maps SDK for Android</a>.</li>
+</ol>
+
+<h4 id="get-an-api-key">Get an API Key</h4>
+<ol>
+  <li>This step only goes through the API Key creation process. If you use your API Key in production, we strongly recommend that you restrict your API key. You can find more information in the product-specific Using API Keys page.</li>
+  <li>The API key is a unique identifier that authenticates requests associated with your project for usage and billing purposes. You must have at least one API key associated with your project.</li>
+  <li>Go to the <strong>Google Maps Platform &gt; Credentials</strong> page, <a href="https://console.cloud.google.com/project/_/google/maps-apis/credentials?utm_source=Docs_Credentials&amp;_gl=1*9zgq7y*_ga*MTUwMDIzODY1Ni4xNjc1OTYyMDgw*_ga_NRWSTWS78N*MTY4MjA4ODIyNS44NS4xLjE2ODIwODgyMzcuMC4wLjA.">Go to the Credentials page</a>.</li>
+  <li>On the <strong>Credentials</strong> page, click <strong>Create credentials &gt; API key</strong>. The <strong>API key created</strong> dialog displays your newly created API key.</li>
+  <li>Click <strong>Close</strong>. The new API key is listed on the <strong>Credentials</strong> page under <strong>API keys</strong>. (Remember to <a href="https://developers.google.com/maps/api-security-best-practices#restricting-api-keys">restrict the API</a> key before using it in production.)</li>
+</ol>
+
+<p><strong>Note:</strong> To continue it is necessary to complete the creation of an API key. If you had problems please visit <a href="https://developers.google.com/maps/documentation/android-sdk/cloud-setup">Set up your Google Cloud project</a>.</p>
+
+<h2 id="add-the-api-key-to-your-app">Add the API key to your app</h2>
+<p>You should not check your API key into your version control system, so it is recommended
+storing it in the <code class="language-plaintext highlighter-rouge">local.properties</code> file, which is located in the root directory of your project.
+For more information about the <code class="language-plaintext highlighter-rouge">local.properties</code> file, see <a href="https://developer.android.com/studio/build#properties-files">Gradle properties files</a>.</p>
+
+<ol>
+  <li>
+    <p>Open the <code class="language-plaintext highlighter-rouge">local.properties</code> in the project level directory, and then add the following code. Replace <code class="language-plaintext highlighter-rouge">YOUR_API_KEY</code> with your API key.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MAPS_API_KEY=YOUR_API_KEY
+</code></pre></div>    </div>
+  </li>
+  <li>Save the file.</li>
+  <li>
+    <p>In your <code class="language-plaintext highlighter-rouge">maps-starter-sample</code> module level <code class="language-plaintext highlighter-rouge">AndroidManifest.xml</code>file, under the <code class="language-plaintext highlighter-rouge">application</code> element add the <code class="language-plaintext highlighter-rouge">meta-data</code> element as follows:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="err">...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;application</span> <span class="err">...</span><span class="nt">&gt;</span>
+      ...
+      <span class="nt">&lt;meta-data</span>
+         <span class="na">android:name=</span><span class="s">"com.google.android.geo.API_KEY"</span>
+         <span class="na">android:value=</span><span class="s">"${MAPS_API_KEY}"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In your “maps-starter-sample” module-level <code class="language-plaintext highlighter-rouge">AndroidManifest.xml</code> add the required permissions, for more information see <a href="https://developer.android.com/training/permissions/declaring">permissions</a>.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;manifest</span> <span class="err">...</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_COARSE_LOCATION"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_FINE_LOCATION"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;application</span> <span class="err">...</span><span class="nt">&gt;</span>
+      ...
+   <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="gradle-configuration">Gradle configuration</h2>
+<p>To integrate the OMH Maps into your project, it is necessary to add a few Gradle dependencies.</p>
+
+<h3 id="add-omh-core-plugin">Add OMH Core plugin</h3>
+<p>To incorporate OMH Maps into your project, you have two options: utilize the OMH Core Plugin or directly include the OMH Client libraries dependencies. The subsequent instructions will outline the necessary steps for including the OMH Core Plugin as a Gradle dependency.</p>
+
+<ol>
+  <li>
+    <p>In your <code class="language-plaintext highlighter-rouge">maps-starter-sample" module-level </code>build.gradle<code class="language-plaintext highlighter-rouge"> under the </code>plugins` element add the plugin id.</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">plugins</span> <span class="p">{</span>
+   <span class="o">..</span><span class="p">.</span>
+   <span class="nf">id</span><span class="p">(</span><span class="s">"com.openmobilehub.android.omh-core"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Save the file and <a href="https://developer.android.com/studio/build#sync-files">sync Project with Gradle Files</a>.</p>
+  </li>
+</ol>
+
+<h3 id="configure-the-omh-core-plugin">Configure the OMH Core plugin</h3>
+<p>In this sample app, we utilize the <code class="language-plaintext highlighter-rouge">omhConfig</code> definition to expand the capabilities of the existing Android Studio variants. For more details, refer to the <a href="https://github.com/openmobilehub/omh-core/tree/release/1.0">OMH Core Plugin Docs</a>.</p>
+
+<p>#### Basic configuration</p>
+
+<ol>
+  <li>In your <code class="language-plaintext highlighter-rouge">maps-starter-sample</code> module-level <code class="language-plaintext highlighter-rouge">build.gradle</code> file add the following code at the end of the file.</li>
+</ol>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">..</span><span class="p">.</span>
+   <span class="nf">dependencies</span> <span class="p">{</span>
+      <span class="o">..</span><span class="p">.</span>
+   <span class="p">}</span>
+
+   <span class="nf">omhConfig</span> <span class="p">{</span>
+      <span class="nf">bundle</span><span class="p">(</span><span class="s">"singleBuild"</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nf">maps</span> <span class="p">{</span>
+            <span class="nf">gmsService</span> <span class="p">{</span>
+               <span class="n">dependency</span> <span class="p">=</span> <span class="s">"com.openmobilehub.android:maps-api-googlemaps:1.0"</span>
+            <span class="p">}</span>
+            <span class="nf">nonGmsService</span> <span class="p">{</span>
+               <span class="n">dependency</span> <span class="p">=</span> <span class="s">"com.openmobilehub.android:maps-api-openstreetmap:1.0"</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="nf">bundle</span><span class="p">(</span><span class="s">"gms"</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nf">maps</span> <span class="p">{</span>
+            <span class="nf">gmsService</span> <span class="p">{</span>
+               <span class="n">dependency</span> <span class="p">=</span> <span class="s">"com.openmobilehub.android:maps-api-googlemaps:1.0"</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="nf">bundle</span><span class="p">(</span><span class="s">"nonGms"</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nf">maps</span> <span class="p">{</span>
+            <span class="nf">nonGmsService</span> <span class="p">{</span>
+               <span class="n">dependency</span> <span class="p">=</span> <span class="s">"com.openmobilehub.android:maps-api-openstreetmap:1.0"</span>
+            <span class="p">}</span>
+         <span class="p">}</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>In this step, you defined the OMH Core Plugin bundles to generate multiple build variants with specific suffixes as their names. For example, if your project has <code class="language-plaintext highlighter-rouge">release</code> and <code class="language-plaintext highlighter-rouge">debug</code> variants with <code class="language-plaintext highlighter-rouge">singleBuild</code>, <code class="language-plaintext highlighter-rouge">gms</code>, and <code class="language-plaintext highlighter-rouge">nonGms</code> OMH bundles, the following build variants will be generated:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">releaseSingleBuild</code>, <code class="language-plaintext highlighter-rouge">releaseGms</code>, and <code class="language-plaintext highlighter-rouge">releaseNonGms</code></li>
+  <li><code class="language-plaintext highlighter-rouge">debugSingleBuild</code>, <code class="language-plaintext highlighter-rouge">debugGms</code>, and <code class="language-plaintext highlighter-rouge">debugNonGms</code></li>
+</ul>
+
+<p>##### Variant singleBuild</p>
+<ul>
+  <li>Define the <code class="language-plaintext highlighter-rouge">Service</code>. In this example is maps.</li>
+  <li>Define the <code class="language-plaintext highlighter-rouge">ServiceDetails</code>. In this example are <code class="language-plaintext highlighter-rouge">gmsService</code> and <code class="language-plaintext highlighter-rouge">nonGmsService</code>.</li>
+  <li>
+    <p>Define the dependency and the path. In this example are <code class="language-plaintext highlighter-rouge">com.openmobilehub.android:maps-api-googlemaps:1.0"</code> and <code class="language-plaintext highlighter-rouge">com.openmobilehub.android:maps-api-openstreetmap:1.0</code>.</p>
+
+    <p><strong>Note: It’s important to observe how a single build encompasses both GMS and Non-GMS configurations.</strong></p>
+  </li>
+</ul>
+
+<p>##### Variant gms</p>
+<ul>
+  <li>Define the <code class="language-plaintext highlighter-rouge">Service</code>. In this example is maps.</li>
+  <li>Define the <code class="language-plaintext highlighter-rouge">ServiceDetails</code> . In this example is <code class="language-plaintext highlighter-rouge">gmsService</code>.</li>
+  <li>
+    <p>Define the dependency and the path. In this example is <code class="language-plaintext highlighter-rouge">com.openmobilehub.android:maps-api-googlemaps:1.0"</code>.</p>
+
+    <p><strong>Note:</strong> gms build covers only GMS (Google Mobile Services).</p>
+  </li>
+</ul>
+
+<p>##### Variant nonGms</p>
+<ul>
+  <li>Define the <code class="language-plaintext highlighter-rouge">Service</code>. In this example is maps.</li>
+  <li>Define the <code class="language-plaintext highlighter-rouge">ServiceDetails</code> . In this example is <code class="language-plaintext highlighter-rouge">nonGmsService</code>.</li>
+  <li>
+    <p>Define the dependency and the path. In this example is <code class="language-plaintext highlighter-rouge">com.openmobilehub.android:maps-api-openstreetmap:1.0</code>.</p>
+
+    <p><strong>Note:</strong> nonGms build covers only Non-GMS configurations.</p>
+  </li>
+</ul>
+
+<ol>
+  <li>Save and <a href="https://developer.android.com/studio/build#sync-files">sync Project with Gradle Files</a>.</li>
+  <li>Now you can select a build variant. To change the build variant Android Studio uses, do one of the following:
+    <ul>
+      <li>Select <code class="language-plaintext highlighter-rouge">Build</code> &gt; <code class="language-plaintext highlighter-rouge">Select Build Variant...</code> in the menu.</li>
+      <li>Select <code class="language-plaintext highlighter-rouge">View</code> &gt; <code class="language-plaintext highlighter-rouge">Tool Windows</code> &gt; <code class="language-plaintext highlighter-rouge">Build Variants</code> in the menu.</li>
+      <li>Click the <code class="language-plaintext highlighter-rouge">Build Variants</code> tab on the tool window bar.</li>
+    </ul>
+  </li>
+  <li>You can select any of the 3 variants for the <code class="language-plaintext highlighter-rouge">:Maps-starter-sample</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">singleBuild</code> variant builds for GMS (Google Mobile Services) and Non-GMS devices without changes to the code.(Recommended)</li>
+      <li><code class="language-plaintext highlighter-rouge">gms</code> variant  builds for devices that has GMS (Google Mobile Services).</li>
+      <li><code class="language-plaintext highlighter-rouge">nonGms</code> variant builds for devices that doesn’t have GMS (Google Mobile Services).</li>
+    </ul>
+
+    <p><strong>Note:</strong> In the rest of this guide, we will use the <code class="language-plaintext highlighter-rouge">debugSingleBuild</code> variant to demonstrate the same build running on GMS and Non-GMS devices.</p>
+  </li>
+  <li>
+    <p>Open <code class="language-plaintext highlighter-rouge">maps-starter-sample</code> module-level <code class="language-plaintext highlighter-rouge">MainApplication</code> class and add the required imports below the package name. The file is in the same level as the <code class="language-plaintext highlighter-rouge">MainActivity</code>:</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">com.omh.android.maps.api.factories.OmhMapProvider</span>
+</code></pre></div>    </div>
+
+    <p>Then initialize the <code class="language-plaintext highlighter-rouge">OmhMapProvider</code> as follows:</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">class</span> <span class="nc">MainApplication</span> <span class="p">:</span> <span class="nc">Application</span><span class="p">()</span> <span class="p">{</span>
+   
+     <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">()</span> <span class="p">{</span>
+         <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">()</span>
+            
+     <span class="nc">OmhMapProvider</span><span class="p">.</span><span class="nc">Initiator</span><span class="p">()</span>
+         <span class="p">.</span><span class="nf">addGmsPath</span><span class="p">(</span><span class="nc">BuildConfig</span><span class="p">.</span><span class="nc">MAPS_GMS_PATH</span><span class="p">)</span>
+         <span class="p">.</span><span class="nf">addNonGmsPath</span><span class="p">(</span><span class="nc">BuildConfig</span><span class="p">.</span><span class="nc">MAPS_NON_GMS_PATH</span><span class="p">)</span>
+         <span class="p">.</span><span class="nf">initialize</span><span class="p">()</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p><strong>Important:</strong> If you encounter the error “Missing BuildConfig.MAPS_GMS_PATH and BuildConfig.MAPS_NON_GMS_PATH in BuildConfig class”. Follow the next steps:</p>
+    <ul>
+      <li><a href="https://developer.android.com/studio/build#sync-files">Sync Project with Gradle Files</a>.</li>
+      <li>Select <code class="language-plaintext highlighter-rouge">Build</code> from the menu at the top in Android Studio.</li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Clean Project</code> and await.</li>
+      <li>Click on <code class="language-plaintext highlighter-rouge">Rebuild Project</code> and await.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="add-the-map-into-your-app">Add the map into your app</h2>
+<p>The main interfaces that you will be interacting with are called <code class="language-plaintext highlighter-rouge">OmhMap</code>, <code class="language-plaintext highlighter-rouge">OmhMapView</code> and <code class="language-plaintext highlighter-rouge">OmhLocation</code>.
+It contains all your basic maps and location functions like displaying a marker, map gestures, getting current location and more.
+Additionally a fragment <code class="language-plaintext highlighter-rouge">OmhMapFragment</code> is provided, this fragment manages the life cycle of the map.</p>
+
+<h3 id="add-a-map-fragment">Add a Map fragment</h3>
+<p><code class="language-plaintext highlighter-rouge">OmhMapFragment</code> is the simplest way to place a map in an application.
+Fragment has to declare <code class="language-plaintext highlighter-rouge">android:name</code> that sets the class name of the fragment to <code class="language-plaintext highlighter-rouge">OmhMapFragment</code>, which is the fragment type used in the maps fragment file.</p>
+
+<ol>
+  <li>Insert the XML fragment snippet into the <code class="language-plaintext highlighter-rouge">fragment_map.xml</code>.</li>
+</ol>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+    <span class="nt">&lt;fragment</span>
+        <span class="na">android:id=</span><span class="s">"@+id/fragment_map_container"</span>
+        <span class="na">android:name=</span><span class="s">"com.omh.android.maps.api.presentation.fragments.OmhMapFragment"</span>
+        <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"0dp"</span>
+        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+...
+</code></pre></div></div>
+
+<p>And the complete fragment’s layout should look similar to this example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">tools:context=</span><span class="s">".MapFragment"</span><span class="nt">&gt;</span>
+
+   <span class="nt">&lt;fragment</span>
+           <span class="na">android:id=</span><span class="s">"@+id/fragment_map_container"</span>
+           <span class="na">android:name=</span><span class="s">"com.omh.android.maps.api.presentation.fragments.OmhMapFragment"</span>
+           <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+           <span class="na">android:layout_height=</span><span class="s">"0dp"</span>
+           <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">"parent"</span>
+           <span class="na">app:layout_constraintEnd_toEndOf=</span><span class="s">"parent"</span>
+           <span class="na">app:layout_constraintStart_toStartOf=</span><span class="s">"parent"</span>
+           <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Change the variant to <code class="language-plaintext highlighter-rouge">debugSingleBuild</code>.</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Run</code> for the <code class="language-plaintext highlighter-rouge">maps-starter-sample</code>.</li>
+</ol>
+
+<h3 id="display-your-current-location">Display your current location</h3>
+<p>An <code class="language-plaintext highlighter-rouge">OmhMap</code> must be acquired using <code class="language-plaintext highlighter-rouge">getMapAsync(OmhOnMapReadyCallback)</code>. This class automatically initializes the maps system and the view.</p>
+
+<ol>
+  <li>
+    <p>Implement the <code class="language-plaintext highlighter-rouge">OmhOnMapReadyCallback</code> interface and override the <code class="language-plaintext highlighter-rouge">onMapReady()</code> method, to set up the map when the <code class="language-plaintext highlighter-rouge">OmhMap</code> object is available:</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">import</span> <span class="nn">android.Manifest.permission.ACCESS_COARSE_LOCATION</span>
+ <span class="k">import</span> <span class="nn">android.Manifest.permission.ACCESS_FINE_LOCATION</span>
+ <span class="k">import</span> <span class="nn">android.content.pm.PackageManager</span>
+ <span class="k">import</span> <span class="nn">android.os.Bundle</span>
+ <span class="k">import</span> <span class="nn">android.util.Log</span>
+ <span class="k">import</span> <span class="nn">androidx.fragment.app.Fragment</span>
+ <span class="k">import</span> <span class="nn">android.view.LayoutInflater</span>
+ <span class="k">import</span> <span class="nn">android.view.View</span>
+ <span class="k">import</span> <span class="nn">android.view.ViewGroup</span>
+ <span class="k">import</span> <span class="nn">androidx.activity.result.contract.ActivityResultContracts</span>
+ <span class="k">import</span> <span class="nn">androidx.core.content.ContextCompat</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.factories.OmhMapProvider</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.fragments.OmhMapFragment</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.interfaces.location.OmhFailureListener</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.interfaces.location.OmhSuccessListener</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.interfaces.maps.OmhMap</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.interfaces.maps.OmhOnMapReadyCallback</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.api.presentation.models.OmhMarkerOptions</span>
+ <span class="k">import</span> <span class="nn">com.omh.android.maps.starter_sample.databinding.FragmentMapBinding</span>
+
+ <span class="kd">class</span> <span class="nc">MapFragment</span> <span class="p">:</span> <span class="nc">Fragment</span><span class="p">(),</span> <span class="nc">OmhOnMapReadyCallback</span> <span class="p">{</span>
+   
+     <span class="c1">// ...</span>
+   
+     <span class="k">override</span> <span class="k">fun</span> <span class="nf">onMapReady</span><span class="p">(</span><span class="n">omhMap</span><span class="p">:</span> <span class="nc">OmhMap</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(!</span><span class="nf">hasPermissions</span><span class="p">())</span> <span class="p">{</span>
+             <span class="nc">Log</span><span class="p">.</span><span class="nf">e</span><span class="p">(</span><span class="s">"permission error"</span><span class="p">,</span> <span class="s">"Not required permissions to get current location"</span><span class="p">)</span>
+             <span class="k">return</span>
+         <span class="p">}</span>
+        
+         <span class="kd">val</span> <span class="py">onSuccessListener</span> <span class="p">=</span> <span class="nc">OmhSuccessListener</span> <span class="p">{</span> <span class="n">omhCoordinate</span> <span class="p">-&gt;</span>
+             <span class="n">omhMap</span><span class="p">.</span><span class="nf">moveCamera</span><span class="p">(</span><span class="n">omhCoordinate</span><span class="p">,</span> <span class="mf">15f</span><span class="p">)</span>
+             <span class="kd">val</span> <span class="py">omhMarkerOptions</span> <span class="p">=</span> <span class="nc">OmhMarkerOptions</span><span class="p">().</span><span class="nf">apply</span> <span class="p">{</span> 
+                 <span class="n">title</span> <span class="p">=</span> <span class="s">"My Current Location"</span>
+                 <span class="n">position</span> <span class="p">=</span> <span class="n">omhCoordinate</span> 
+             <span class="p">}</span>
+             <span class="n">omhMap</span><span class="p">.</span><span class="nf">addMarker</span><span class="p">(</span><span class="n">omhMarkerOptions</span><span class="p">)</span>
+         <span class="p">}</span>
+         <span class="kd">val</span> <span class="py">onFailureListener</span> <span class="p">=</span> <span class="nc">OmhFailureListener</span> <span class="p">{</span> <span class="n">exception</span> <span class="p">-&gt;</span>
+             <span class="nc">Log</span><span class="p">.</span><span class="nf">e</span><span class="p">(</span><span class="s">"location error"</span><span class="p">,</span> <span class="n">exception</span><span class="p">.</span><span class="n">localizedMessage</span><span class="p">,</span> <span class="n">exception</span><span class="p">)</span>
+         <span class="p">}</span>
+         <span class="c1">// Safe use of 'noinspection MissingPermission' since it is checking permissions in the if condition</span>
+         <span class="c1">// noinspection MissingPermission</span>
+         <span class="nc">OmhMapProvider</span><span class="p">.</span><span class="nf">getInstance</span><span class="p">().</span><span class="nf">provideOmhLocation</span><span class="p">(</span><span class="nf">requireContext</span><span class="p">()).</span><span class="nf">getCurrentLocation</span><span class="p">(</span><span class="n">onSuccessListener</span><span class="p">,</span> <span class="n">onFailureListener</span><span class="p">)</span>
+     <span class="p">}</span>
+    
+     <span class="k">private</span> <span class="k">fun</span> <span class="nf">hasPermissions</span><span class="p">()</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="nc">ACCESS_FINE_LOCATION</span><span class="p">,</span> <span class="nc">ACCESS_COARSE_LOCATION</span><span class="p">).</span><span class="nf">all</span> <span class="p">{</span>
+         <span class="nc">ContextCompat</span><span class="p">.</span><span class="nf">checkSelfPermission</span><span class="p">(</span><span class="nf">requireContext</span><span class="p">(),</span> <span class="n">it</span><span class="p">)</span> <span class="p">==</span> <span class="nc">PackageManager</span><span class="p">.</span><span class="nc">PERMISSION_GRANTED</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In your fragment’s onViewCreated(view: View, savedInstanceState: Bundle?) method, get the <code class="language-plaintext highlighter-rouge">OmhMapFragment</code> by calling FragmentManager.findFragmentById(). 
+Then use <code class="language-plaintext highlighter-rouge">getMapAsync()</code> to register for the map callback:</p>
+
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">override</span> <span class="k">fun</span> <span class="nf">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">:</span> <span class="nc">View</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+     <span class="k">super</span><span class="p">.</span><span class="nf">onViewCreated</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">savedInstanceState</span><span class="p">)</span>
+
+     <span class="c1">// Request permissions, this can be done in another way, see https://developer.android.com/training/permissions/requesting</span>
+     <span class="nf">registerForActivityResult</span><span class="p">(</span><span class="nc">ActivityResultContracts</span><span class="p">.</span><span class="nc">RequestMultiplePermissions</span><span class="p">())</span> <span class="p">{</span>
+         <span class="c1">// Obtain the OmhMapFragment and get notified when the map is ready to be used.</span>
+         <span class="kd">val</span> <span class="py">omhMapFragment</span> <span class="p">=</span> <span class="n">childFragmentManager</span><span class="p">.</span><span class="nf">findFragmentById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">fragment_map_container</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="nc">OmhMapFragment</span>
+         <span class="n">omhMapFragment</span><span class="o">?.</span><span class="nf">getMapAsync</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+     <span class="p">}.</span><span class="nf">launch</span><span class="p">(</span><span class="nf">arrayOf</span><span class="p">(</span><span class="nc">ACCESS_FINE_LOCATION</span><span class="p">,</span> <span class="nc">ACCESS_COARSE_LOCATION</span><span class="p">))</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Click <code class="language-plaintext highlighter-rouge">Run</code> for the <code class="language-plaintext highlighter-rouge">maps-starter-sample</code> menu option (or the play button icon) to run your app and see the map with the device’s location.</p>
+
+    <p><strong>Important: For a better experience and accuracy try a phone with a SIM card.</strong></p>
+  </li>
+  <li>
+    <p>Explore Advanced Features</p>
+
+    <p>Complete the guide and access advanced mapping features: camera events, markers, location management, gestures, network utilities, and custom implementations/plugins. Visit <a href="https://github.com/openmobilehub/omh-maps/wiki#ohm-map-sdk---advanced-features">Advanced Features</a> for details, examples, and        guides. Enhance your mapping experiences. Explore now!</p>
+  </li>
+</ol>
+
 <h1 id="sample-app">Sample App</h1>
 <p>This repository includes a <a href="/maps-sample">maps-sample</a> that demonstrates the functionality of the OMH Maps Client Library. By cloning the repo and executing the app, you can explore the various features offered by the library. However, if you prefer a step-by-step approach to learn the SDK from scratch, we recommend following the detailed Getting Started guide provided in this repository. The guide will walk you through the implementation process and help you integrate the OMH Maps Client Library into your projects effectively.</p>
 
@@ -177,6 +566,22 @@
 
 <h1 id="contributing">Contributing</h1>
 <p>Please contribute! We will gladly review any pull requests. Make sure to read the <a href="https://github.com/openmobilehub/omh-maps/blob/release/1.0/CONTRIBUTING.md">Contributing</a> page first though.</p>
+
+<h1 id="license">License</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Copyright 2023 Open Mobile Hub
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre></div></div>
 
 
       </div>
