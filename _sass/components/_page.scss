@@ -49,3 +49,9 @@
   padding: 20px;
   border-radius: 30px;
 }
+@media all and (max-width: 768px) {
+  .bg2 {
+    background-color: $white !important;
+    background-image: none !important;
+  }
+}
