@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Github",
+    "link": "https://github.com/openmobilehub",
+    "image": "images/social/github.svg"
+  },
+  {
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/company/open-mobile-hub/?viewAsMember=true",
+    "image": "images/social/linkedin-logo.png"
+  },
+  {
+    "name": "X",
+    "link": "https://twitter.com/openmobilehub",
+    "image": "images/social/x-logo.svg"
+  },
+  {
+    "name": "Discord",
+    "link": "https://discord.gg/yTAFKbeVMw",
+    "image": "images/social/discord-mark-white.png"
+  }
+]

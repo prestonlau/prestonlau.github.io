@@ -5,6 +5,15 @@
   .wrapper {
     flex: 1 0 0;
   }
+  ul li {
+    margin-left: 20px;
+  }
+  img {
+    width: 100%;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
 }
 .bg1 {
   background-image: url("/images/background/bg1.jpg");
@@ -39,10 +48,78 @@
   background-size: cover;
   height: 400px;
 }
+.bg6 {
+  background-image: url("/images/background/bg6.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg7 {
+  background-image: url("/images/background/bg7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg8 {
+  background-image: url("/images/background/bg8.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg9 {
+  background-image: url("/images/background/bg9.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg10 {
+  background-image: url("/images/background/bg10.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg11 {
+  background-image: url("/images/background/bg11.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg12 {
+  background-image: url("/images/background/bg12.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg13 {
+  background-image: url("/images/background/bg13.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg14 {
+  background-image: url("/images/background/bg14.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.bg15 {
+  background-image: url("/images/background/bg15.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .whitebg {
   background-color: $white;
   padding: 20px;
-  border-radius: 30px;
+  box-shadow: 10px 10px 30px grey;
 }
 @media all and (max-width: 768px) {
   .bg2 {

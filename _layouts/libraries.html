@@ -20,7 +20,7 @@ bodyClass: "page-libraries"
 </div>
 
 {% if site.data.libraries %}
-<div class="strip strip-light-blue">
+<div class="bg15">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
     <div class="row justify-content-center">
 
@@ -30,7 +30,7 @@ bodyClass: "page-libraries"
           {% if library.image %}
           <div class="library-image"><a href="{{ library.url }}"><img alt="{{ library.title }} logo" src="{{ library.image.url | relative_url }}" width="{{ library.image.width }}" height="{{ library.image.height }}" /></a></div>
           {% endif %}
-          <h2 class="library-title">{{ library.title }}</h2>
+          <a href="{{ library.url }}"><h2 class="library-title">{{ library.title }}</h2></a>
           <div class="library-content">{{ library.description }}</div>
           {% if library.plugin %}
           <h2 class="library-title">Plugin</h2>

@@ -1,9 +1,15 @@
 .benefits {
   height: 100%;
+  border: 1px solid #fff6f8;
+  padding: 40px;
+  background-color: #fff;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
   text-align: left;
+  box-shadow: 10px 10px 30px gray;
+  margin-top: 40px;
+
   .benefits-image {
     flex: 0 0 auto;
     width: 120px;

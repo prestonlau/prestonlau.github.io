@@ -4,8 +4,9 @@ description: OMH Maps is a client library that makes it easy to integrate maps o
 date: 2018-11-18T12:33:46+10:00
 weight: 20
 github_url: https://www.github.com/openmobilehub/omh-maps
+background: bg9
 ---
-<ul>
+<ul class="menu_sdk">
 <li><A href="#singlecodebase">A single codebase</A></li>
 <li><A href="#getting-started">Getting started</A></li>
 <li><A href="#sample-app">Sample App</A></li>

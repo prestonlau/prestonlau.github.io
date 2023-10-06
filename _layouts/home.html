@@ -12,32 +12,36 @@ bodyClass: "page-home"
 </head>
 <body class="{{ page.bodyClass }}">
 
-<div class="intro bg2">
+<div class="intro bg11">
   <div class="container">
     <div class="row justify-content-start">
       <div class="col-12 col-md-8 col-lg-8 order-1 order-md-1">
+        <div class="frontpagedesc reveal fade-left">{{ content }}</div>
         <video width="100%" height="auto" muted loop autoplay controls preload="auto">
           <source src="/videos/omh_intro.mp4" type="video/mp4">
         </video>
-        <div class="frontpagedesc">{{ content }}</div>
       </div>
       
-        <div class="col-12 col-md-4 col-lg-4 order-2 order-md-2 position-relative">
+      <div class="col-12 col-md-4 col-lg-4 order-2 order-md-2 position-relative">
         <div class="frontpageads reveal fade-right">
-          <h1>Join us in Shanghai on Sept 26 to learn more about OMH</h1>
-          <a href="https://conference2023.gosim.org/" target ="_blank"><img src="/images/main/gosim.png" style="width: 50%;margin-bottom:10px;"/></a>
-          <a href="https://conference2023.gosim.org/schedule#mobile" target ="_blank"><img src="/images/main/gosim_speaker.png" style="width: 100%;"/>
+          <h1>OMH Presentation at GOSIM conference in Shanghai China</h1>
+          <a href="https://conference2023.gosim.org/" target ="_blank"><img src="/images/main/gosim.png" style="width: 30%;margin-bottom:10px;"/></a>
+          <a href="/blogs/gosim/" target ="_blank"><img src="/images/main/gosim_speaker.png" style="width: 100%;"/>
           <h2>Unleash The Potential of Every Mobile Device Through Open Mobile Hub Android SDK</h2></a>
-          <img src="/images/main/KubeCon-CloudNativeCon-China.png" style="width: 70%;margin-bottom:10px;"/></a>
+          <img src="/images/main/KubeCon-CloudNativeCon-China.png" style="width: 65%;margin-bottom:10px;"/></a>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>
 
 {% if site.data.features %}
-<div class="strip strip-light-blue">
+<div class="bg15">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+    <h1 class="reveal fade-top">OMH SDK Framework</h1>
+    </div>
+    <br/><br/>
     <div class="row justify-content-center">
 
       {% for feature in site.data.features %}
@@ -57,3 +61,43 @@ bodyClass: "page-home"
   </div>
 </div>
 {% endif %}
+
+<div class="strip strip-white">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-left">
+      <div class="col-12 col-md-8 col-lg-8 order-1 order-md-1 mb-2 reveal fade-left">
+        <a href="/blogs/lf_paper/"><img src="/images/blogs/Linux%20Foundation_A%20New%20Direction%20for%20the%20Mobile%20Industry%202023_featured_image2.png"/></a>
+      </div>
+      <div class="col-12 col-md-4 col-lg-4 order-2 order-md-2 position-relative mb-2 reveal fade-right">
+
+<h2>A New Direction for the Mobile Industry</h2>
+<p>Open ecosystems have many advantages over closed ecosystems. They increase innovation, make collaboration more efficient, encourage industry standards and interoperability, and help everyone in the ecosystem adapt to evolving markets and changing environments.</p>
+<p>Proper management of open ecosystems can benefit everyone. Consumers can get cheaper, richer products; developers can suffer less friction and ship new products quicker; and markets can expand to less affluent populations. An open and competitive market welcome by regulators.</p>
+<p>This insightful white paper from Linux Foundation Research offers a keen analysis of what troubles this mobile ecosystem and how open source could solve most of these troubles.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip strip-light-blue">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+
+      {% assign posts = site.blogs | sort: 'date' | reverse %}
+      {% for blog in posts | limit:3 %}
+      <div class="col-12 col-md-6 col-lg-4 mb-1">
+        <div class="blog reveal fade-bottom">
+          <a href="{{ blog.url | relative_url }}"><h3 class="blog-title">{{ blog.title }}</h3></a>
+          <div class="blog-content">{{ feature.description }}</div>
+          {% assign first_paragraph = blog.content | markdownify | split: '</p>' | first | append: '</p>' %}
+          <p><b>{{ blog.date | date: "%B %-d %Y" }}</b> - {{ first_paragraph | strip_html | truncate: 250 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+</div>

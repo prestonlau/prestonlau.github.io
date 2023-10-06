@@ -4,6 +4,7 @@ description: The OMH Core is a Gradle plugin that allows developers to configure
 date: 2019-01-28T15:15:26+10:00
 weight: 40
 github_url: https://www.github.com/openmobilehub/omh-core
+background: bg10
 ---
 
 <style>

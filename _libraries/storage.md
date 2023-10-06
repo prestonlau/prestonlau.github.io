@@ -4,8 +4,9 @@ description: The OMH Storage Client Library would allow users to support file ma
 date: 2019-05-18T12:33:46+10:00
 weight: 30
 github_url: https://www.github.com/openmobilehub/omh-storage
+background: bg6
 ---
-<ul>
+<ul class="menu_sdk">
 <li><A href="#singlecodebase">A single codebase</A></li>
 <li><A href="#getting-started">Getting started</A></li>
 <li><A href="#sample-app">Sample App</A></li>
@@ -429,7 +430,7 @@ If you are configuring this step by step on the `code-starter` branch:
 
 2. Run the sample app to download files.
 
-# Sample App: All-Feature Demonstration
+# Sample App
 This repository also contains a [Storage-sample](/storage-sample), which demonstrates all the functionalities of the OMH Storage Client Library. To get started, follow these steps:
 
 1. Clone the repository to your local machine.

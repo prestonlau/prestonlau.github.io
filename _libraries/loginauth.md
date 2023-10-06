@@ -4,8 +4,9 @@ description: OMH Auth is an Android client library that makes it easy to integra
 date: 2019-01-28T15:15:26+10:00
 weight: 10
 github_url: https://www.github.com/openmobilehub/omh-auth
+background: bg7
 ---
-<ul>
+<ul class="menu_sdk">
 <li><A href="#singlecodebase">A single codebase</A></li>
 <li><A href="#getting-started">Getting started</A></li>
 <li><A href="#sample-app">Sample App</A></li>
@@ -67,20 +68,16 @@ For instance, the following screenshots showcase multiple devices with Android, 
 
 # Getting started
 
-This section describes how to setup an Android Studio project to use the OMH Auth SDK for Android.
-For greater ease, a base code will be used within the repository.
+This section describes how to setup an Android Studio project to use the OMH Auth SDK for Android. For greater ease, a base code will be used within the repository.
 
-**Note: To quickly run a full-featured app with all OMH Auth functionality, refer to
-the [`Sample App`](#sample-app) section and follow the provided steps.**
+**Note: To quickly run a full-featured app with all OMH Auth functionality, refer to the [`Sample App`](#sample-app) section and follow the provided steps.**
 
 ## Set up the development environment
 
 1. Android Studio is required. If you haven't already done
-   so, [download](https://developer.android.com/studio/index.html)
-   and [install](https://developer.android.com/studio/install.html?pkg=studio) it.
+   so, [download](https://developer.android.com/studio/index.html) and [install](https://developer.android.com/studio/install.html?pkg=studio) it.
 2. Ensure that you are using
-   the [Android Gradle plugin](https://developer.android.com/studio/releases/gradle-plugin) version
-   7.0 or later in Android Studio.
+   the [Android Gradle plugin](https://developer.android.com/studio/releases/gradle-plugin) version 7.0 or later in Android Studio.
 
 ## Clone the repository
 

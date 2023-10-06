@@ -17,17 +17,23 @@ bodyClass: "page-blogs"
 <div class="strip strip-light-blue">
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% for blog in site.blogs %}
+    {% assign posts = site.blogs | sort: 'date' | reverse %}
+    {% for blog in posts %}
     <div class="col-md-2"></div>
     <div class="col-12 col-md-8 mb-3">
     <div class="whitebg reveal fade-bottom">
-      <div>
-        <h2 align="left">
+    <div class="row mb-1">
+      <div class="col-2">
+        <img src="{{ blog.image | relative_url }}" width="100%" />
+      </div>
+      <div class="col-10">
+        <h2 class="blog-title">
           <a href="{{ blog.url | relative_url }}">{{ blog.title }}</a>
         </h2>
-        {% assign first_paragraph = blog.content | markdownify | split: '</p>' | first | append: '</p>' %}
-        <p>{{ first_paragraph | strip_html | truncate: 250 }}</p>
       </div>
+    </div>
+        {% assign first_paragraph = blog.content | markdownify | split: '</p>' | first | append: '</p>' %}
+        <p><b>{{ blog.date | date: "%B %-d %Y" }}</b> - {{ first_paragraph | strip_html | truncate: 250 }}</p>
     </div>
     </div>
     <div class="col-md-2"></div>

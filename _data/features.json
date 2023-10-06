@@ -19,7 +19,7 @@
   },
   {
     "title": "Empowering Third-Party Providers: Extensibility with Plugins",
-    "description": "The SDKs offer an exceptional extensible capability, empowering third-party providers to develop their own Android library plugins through the implementation of standard interfaces.<br/><br/><a href=\"/libraries/\"><button class=\"button\" role=\"button\">More Info</button></a>",
+    "description": "The SDKs offer an exceptional extensible capability, empowering third-party providers to develop their own plugins through implementation of standard interfaces, allowing apps developers to seamlessly switch API service providers across different OS platforms.<br/><br/><a href=\"/libraries/\"><button class=\"button\" role=\"button\">More Info</button></a>",
     "image": {
       "url": "images/features/extensible.png",
       "width": 120,

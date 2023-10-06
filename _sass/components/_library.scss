@@ -1,13 +1,14 @@
 .library {
   height: 100%;
   border: 1px solid $white-offset;
-  border-radius: 30px;
   padding: 40px;
+  border-radius: 30px;
   background-color: #ffffff;
   display: flex;
   align-items: left;
   flex-direction: column;
   text-align: left;
+  box-shadow: 10px 10px 30px grey;
   .library-image {
     flex: 0 0 auto;
     width: 120px;
@@ -36,13 +37,56 @@
     margin-top: 20px;
   }
   ul {
-    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  ol {
+    margin-bottom: 20px;
+  }
+  ol li {
+    margin-left: 20px;
   }
 
+  .menu_sdk {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+      background-color: #333333;
+      float: left;
+      margin: 2px;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #666666;
+    }
+  }
+
+  .highlight {
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 16px;
+    overflow: auto;
+    font-size: 90%;
+    line-height: 1.45;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+  }
   .library-title {
   }
   .library-content {
     margin-bottom: 0;
     margin-top: 0;
   }
+}
+.library-single {
+  padding: 20px 60px 60px 60px;
 }

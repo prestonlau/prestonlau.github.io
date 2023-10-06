@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Open Source: Client Libraries and Tools on Github",
+    "description": "OMH revolutionizes the mobile ecosystem with its open-source framework, accessible on GitHub for seamless collaboration and innovation. The mobile client libraries and tools empower developers to seamlessly integrate a wide range of mobile services into their applications.<br/><br/><a href=\"https://www.github.com/openmobilehub/\" target=\"_blank\"><button class=\"button\" role=\"button\">More Info</button></a>",
+    "image": {
+      "url": "images/features/client_sdk.png",
+      "width": 120,
+      "height": 120
+    }
+  },
+  {
+    "title": "Unified Codebase: Reaching All Devices, OS Platform Agnositc",
+    "description": "Unlock the power of a single codebase, seamlessly catering to all devices running different OS platforms. Streamline your development process, maximize reach, and deliver consistent user experiences across a diverse range of mobile devices.<br/><br/><a href=\"/benefits/\"><button class=\"button\" role=\"button\">More Info</button></a>",
+    "image": {
+      "url": "images/features/single_codebase.png",
+      "width": 120,
+      "height": 120
+    }
+  },
+  {
+    "title": "Empowering Third-Party Providers: Extensibility with Plugins",
+    "description": "The SDKs offer an exceptional extensible capability, empowering third-party providers to develop their own Android library plugins through the implementation of standard interfaces.<br/><br/><a href=\"/libraries/\"><button class=\"button\" role=\"button\">More Info</button></a>",
+    "image": {
+      "url": "images/features/extensible.png",
+      "width": 120,
+      "height": 120
+    }
+  }
+]

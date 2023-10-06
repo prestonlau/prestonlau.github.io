@@ -1,0 +1,34 @@
+main:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "SDK & Plugins"
+    url: "/libraries/"
+    weight: 2
+    child:
+      - name: "Login & Authentication"
+        url: /libraries/loginauth/
+      - name: "Maps & Location"
+        url: /libraries/maps/
+      - name: "Storage"
+        url: /libraries/storage/
+      - name: "Core Gradle Plugin"
+        url: /libraries/core_plugin/
+  - name: "Benefits"
+    url: "/benefits/"
+    weight: 3
+  - name: "Blog"
+    url: /blogs/
+    weight: 4
+  - name: "Contact"
+    url: "/contact/"
+    weight: 5
+  
+
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 6
+  - name: "Contact"
+    url: "/contact/"
+    weight: 7

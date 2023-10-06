@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Login & Authentication SDK",
+    "description": "OMH Auth is a client library that makes it easy to integrate auth providers on all types of devices running different OS platforms. It eliminates the need for separate codebases for different app builds.",
+    "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-auth/tree/main/auth-api-gms\">Auth GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-auth/tree/main/auth-api-non-gms\">Auth Non-GMS Plugin</a></li></ul>",
+    "url": "/libraries/loginauth/",
+    "image": {
+      "url": "images/libraries/login.png",
+      "width": 120,
+      "height": 120
+    }
+  },
+  {
+    "title": "Maps & Location SDK",
+    "description": "OMH Maps is a client library that makes it easy to integrate maps on all types of devices running different OS platforms. It eliminates the need for separate codebases for different app builds.",
+    "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-maps/tree/main/maps-api-googlemaps\">Google Maps GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-maps/tree/main/maps-api-openstreetmap\">OpenStreetMap Non-GMS Plugin</a></li></ul>",
+    "url": "/libraries/maps/",
+    "image": {
+      "url": "images/libraries/map.png",
+      "width": 120,
+      "height": 120
+    }
+  },
+  {
+    "title": "Storage SDK",
+    "description": "The OMH Storage Client Library would allow users to support file management and app backup services in a seamless way, regardless of the OS platforms on all types of devices.",
+    "url": "/libraries/storage/",
+    "plugin": "<ul><li><a href=\"https://github.com/openmobilehub/omh-storage/tree/main/storage-api-drive-gms\">Google Drive GMS Plugin</a></li><li><a href=\"https://github.com/openmobilehub/omh-storage/tree/main/storage-api-drive-nongms\">Google Drive Non-GMS Plugin</a></li></ul>",
+    "image": {
+      "url": "images/libraries/storage.png",
+      "width": 120,
+      "height": 120
+    }
+  },
+  {
+    "title": "Core Gradle Plugin",
+    "description": "The OMH Core is an essential Gradle plugin designed to streamline the configuration, enabling, and setup of OMH Client Libraries within developers’ projects. With this plugin, developers can effortlessly incorporate the necessary dependencies and activate custom-build variants, facilitating the compilation of various builds that leverage the defined providers.",
+    "url": "/libraries/core_plugin/",
+    "image": {
+      "url": "images/libraries/core.png",
+      "width": 120,
+      "height": 120
+    }
+  }
+]
